@@ -33,7 +33,7 @@
 		    <groupId>com.learn</groupId>
 		    <artifactId>common-jar</artifactId>
 		    <version>0.0.1-SNAPSHOT</version>
-		    <!-- <scope>provided</scope> -->
+		    <scope>provided</scope>
 		</dependency>
 		        
   </dependencies>

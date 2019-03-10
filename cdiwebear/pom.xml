@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.learn</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>cdiwebear</artifactId>
+  
+  <packaging>ear</packaging>
+  <name>cdiwebear Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+	    <groupId>com.learn</groupId>
+	    <artifactId>common-jar</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.learn</groupId>
+	    <artifactId>cdiwebproject</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+	    <type>war</type>
+	</dependency>
+  </dependencies>
+  <build>
+    <finalName>cdiwebear</finalName>
+    <pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-ear-plugin</artifactId>
+         <configuration>
+            <applicationName>parent</applicationName>
+            <!-- <version>0.0.1-SNAPSHOT</version> -->
+		    <initializeInOrder>true</initializeInOrder>
+		    <defaultLibBundleDir>lib</defaultLibBundleDir>
+		    <modules>
+			  <jarModule>
+			    <groupId>com.learn</groupId>
+	            <artifactId>common-jar</artifactId>
+			  </jarModule>
+			  <webModule>
+				 <groupId>com.learn</groupId>
+				 <artifactId>cdiwebproject</artifactId>
+				<!-- <context-root>/cdiwebproject</context-root> -->
+			  </webModule>
+			</modules>
+         </configuration>
+      </plugin>
+    </plugins>
+   </pluginManagement>
+  </build>
+</project>
